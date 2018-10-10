@@ -5,8 +5,8 @@ This module contains:
   -- Methods you must implement for the Cloud object
   
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.  October 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Isaac Harper.  October 2018.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 from numbers import Number
@@ -27,8 +27,8 @@ def main():
 
     run_test_init()
     run_test_rain()
-    # run_test_get_total_rain_amount()
-    # run_test_merge_cloud()
+    run_test_get_total_rain_amount()
+    run_test_merge_cloud()
 
 
 ###############################################################################
@@ -50,6 +50,7 @@ class Cloud(object):
         self.water = water
         if self.water > self.capacity:
             self.water = self.capacity
+
 
         """
         What comes in:
@@ -86,6 +87,7 @@ class Cloud(object):
         # ---------------------------------------------------------------------
 
     def rain(self, rain_amount):
+        self.rain_amount = self.rain_amount + self.rain_amount
         rain_amount = self.rain_amount + rain_amount
         if rain_amount > self.water:
             rain_amount = self.water
@@ -137,6 +139,7 @@ class Cloud(object):
         # ---------------------------------------------------------------------
 
     def get_total_rain_amount(self):
+        return self.rain_amount
         """
         What comes in:
           -- self
@@ -169,9 +172,10 @@ class Cloud(object):
         # TODO: 4. Implement and test this method.
         # ---------------------------------------------------------------------
 
-
     def merge_cloud(self, another_cloud):
-        another_cloud = self.another_cloud
+        self.water = self.water + another_cloud.water
+        self.capacity = self.capacity + another_cloud.capacity
+        return Cloud(self.capacity, self.water)
         """
         What comes in:
           -- self

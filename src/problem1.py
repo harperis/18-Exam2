@@ -50,8 +50,8 @@ def main():
 
     run_test_problem1a()
     run_test_problem1b()
-    # run_test_problem1c()
-    # run_test_problem1d()
+    run_test_problem1c()
+    run_test_problem1d()
 
 
 def run_test_problem1a():
@@ -556,10 +556,7 @@ def run_test_problem1c():
 def problem1c(strings):
     for k in range(len(strings)):
         if is_prime(len(strings)) is True:
-            if 
-
-
-
+            return is_prime(k)
     """
     What comes in:
       -- a sequence of strings
